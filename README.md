@@ -1,4 +1,4 @@
-# Week 7 - Workshop 2 - Session Management
+# Week 7 - Workshop 2 - Cookies
 
 ## !WORK IN PROGRESS!
 
@@ -6,18 +6,13 @@ __Learning Outcomes__
 
 - what are cookies
 - setting and removing cookies with headers
-- what is cookie signing/encryption
-- jwts or JSON cookies
-- secure routing
 
 __npm packages__
 - [cookie](http://npmjs.com/package/cookie)
-- [cookie-signature](http://npmjs.com/package/cookie-signature)
-- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 
 __Exercises__
 
-- read docs for cookie/jwt/whatever and implement that as a middleware
+- implement a logged_in=true cookie on glitch
 
 ---
 
@@ -39,14 +34,7 @@ This means that every time you use a page that has 3rd party JavaScript running 
 Cookies are attached to the server response using the `Set-Cookie` header.
 [insert detailed cookie header explanation]
 
-### Cookie security
+### Cookie flags etc
 A standard `user_id=1` cookie naturally very insecure. This can be improved in 3 ways.
 1. Enabling the `http-only` flag, which means that browser JavaScript cannot access the cookie, which prevents the cookie being accessed by an XSS attack.
 2. Enabling the `secure` flag, which means the cookie will only be set on a HTTPS connection. This prevents a man in the middle attack.
-3. Signing or encrypting the payload of the cookie. [What is encryption?]
-
-### JWTs
-[this section will be either JWT or encrypted JSON based]
-
-### Cookie middleware implementation
-[this will probably involve remixing a project on [glitch](https://glitch.com/) that already has working routes but needs the cookie/JWT middleware to secure them, and pass user information]
