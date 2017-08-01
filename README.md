@@ -13,17 +13,17 @@ __Learning Outcomes__
 
 ### Remembering the browser
 
-Alright so now that you know how to store users passwords safely, now the question is: how does your server remember a user?
+So now that you know how to store users passwords safely, now the question is: how does your server remember a user?
 
-A cookie is a piece of data that your server, hosted on a certain domain (localhost, google.com etc) sends back, that the users browser will then keep and attach to every future request, but only to that domain. An amazon.com cookie will not be attached to a request to an ebay.com domain, for example.
+A cookie is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
 ### How to use cookies
 
-Cookies are attached to the server response using the `Set-Cookie` header.
+Cookies are attached to the server response using the `Set-Cookie` header. 
 
-You set headers in Node.js using the `res.setHeader` and `res.writeHead` methods.
+In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods.
 
-If a user has successfully authenticated with a server, you can instruct their browser to add a cookie using:
+(NB: All servers use headers to communicate with the browser, not just Node.js.)
 ```
 res.setHeader('Set-Cookie', 'logged_in=true');
 
@@ -32,14 +32,16 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
 ```
 
+Here we are setting a very simple cookie with a key of `logged_in` and a value of 'true'. In reality of course, every user would be given a different, unique cookie, but this will do for now.
+
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
 
 Flag | Description
 ---|---
-`HttpOnly` | means that browser JavaScript cannot access the cookie, which prevents the cookie being accessed by an XSS attack
-`Secure` | means the cookie will only be set on a HTTPS connection. This prevents a man-in-the-middle attack.
-`Max-Age` |sets lifetime in seconds
+`HttpOnly` | This prevents browser JavaScript cannot access the cookie, which stops the cookie being accessed in the event of an XSS attack.
+`Secure` | This means the cookie will only be set over a HTTPS connection. This prevents a man-in-the-middle attack.
+`Max-Age` | This sets the cookie lifetime in seconds.
 
 More flags can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie).
 
@@ -53,13 +55,13 @@ Now every time that browser makes a request to your server, it will the send the
 ```
 req.headers.cookie; // 'logged_in=true'
 ```
-This is what you will be looking for in order to grant users access, send back private information etc. In reality however every user will be given a different cookie, but this will do for now.
+This is what you will be looking for in order to grant users access, send back private information etc.
 
 ### Removing cookies
 There are a couple of ways to delete a cookie, 1. overwriting the value. 2. Setting the age to 0.
 ```
 // Here we are doing both.
-res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=1');
+res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
 
 ### Cookie npm package
