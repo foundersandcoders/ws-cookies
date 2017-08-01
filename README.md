@@ -34,13 +34,14 @@ res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
 
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
-Flag | Description | Example
----|---|---
-`HttpOnly` | means that browser JavaScript cannot access the cookie, which prevents the cookie being accessed by an XSS attack | yeh
-`Secure` | means the cookie will only be set on a HTTPS connection. This prevents a man in the middle attack. | yo
-`Max-Age` | means the cookie will only be set on a HTTPS connection. This prevents a man in the middle attack. | yo
 
-More can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie).
+Flag | Description
+---|---
+`HttpOnly` | means that browser JavaScript cannot access the cookie, which prevents the cookie being accessed by an XSS attack
+`Secure` | means the cookie will only be set on a HTTPS connection. This prevents a man-in-the-middle attack.
+`Max-Age` |sets lifetime in seconds
+
+More flags can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie).
 
 So to improve our cookie a bit we can try:
 ```
