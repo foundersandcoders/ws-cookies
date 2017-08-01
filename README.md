@@ -13,7 +13,7 @@ __Learning Outcomes__
 
 ### Remembering the browser
 
-So now that you know how to store users passwords safely, now the question is: how does your server remember a user?
+So now that you know how to store users passwords safely, the question is: how does your server remember a user?
 
 A cookie is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
