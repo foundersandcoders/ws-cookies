@@ -67,6 +67,7 @@ As you can see this can be a bit cumbersome, so we can use the npm package '[coo
 const { serialize } = require('cookie');
 
 serialize('logged_in', 'true', { secure: true, httpOnly: true, maxAge: 9000 });
+// 'logged_in=true; Max-Age=9000; HttpOnly; Secure'
 ```
 
 Even more usefully, `cookie` can also be used to parse incoming cookies:
