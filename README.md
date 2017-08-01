@@ -17,6 +17,8 @@ So now that you know how to store users passwords safely, the question is: how d
 
 A cookie is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
+(If you open up DevTools, and go to the 'Application' tab you will be able to see all the cookies attached to the domain you are currently on.)
+
 ### How to use cookies
 
 Cookies are attached to the server response using the `Set-Cookie` header. 
