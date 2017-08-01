@@ -34,7 +34,7 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
 ```
 
-Here we are setting a very simple cookie with a key of `logged_in` and a value of 'true'. In reality of course, every user would be given a different, unique cookie, but this will do for now.
+Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. In reality of course, every user would be given a different, unique cookie, but this will do for now.
 
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
