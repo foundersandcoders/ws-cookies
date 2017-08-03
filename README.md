@@ -13,9 +13,9 @@ __Learning Outcomes__
 
 ### Remembering the browser
 
-So now that you know how to store users passwords safely, the question is: how does your server remember a user?
+So now that you know how to store a user's password safely, the question is: how does your server remember a browser?
 
-A cookie is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
+A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
 (If you open up DevTools, and go to the 'Application' tab you will be able to see all the cookies attached to the domain you are currently on.)
 
@@ -85,8 +85,13 @@ parse(cookieHeader); // { logged_in: 'true' }
 ```
 
 ### Exercise
-1. Go to glitch. [link here]
-2. Make 3 endpoints. One for logging in, one for logging out, and one for checking your login status.
+1. Go to the [Glitch project](https://glitch.com/edit/#!/week-7-cookies) and remix it.
+2. In `index.html` there are three buttons, implement the cookie logic on the server side:
+Endpoint | Action
+---|---
+`/login` | Should add a cookie and redirect to `/`
+`/logout` | Should remove the cookie and redirect to `/` 
+`/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response.
 
 __BONUS 3rd PARTY TRACKING SECTION:__
 When you are on `foo.com`, requests to `foo.com` will not send your `bar.com` cookie to its server.
