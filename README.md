@@ -92,6 +92,8 @@ Endpoint | Action
 `/logout` | Should remove the cookie and redirect to `/` 
 `/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response.
 
+---
+
 __BONUS 3rd PARTY TRACKING SECTION:__
 When you are on `foo.com`, requests to `foo.com` will not send your `bar.com` cookie to its server.
 
