@@ -32,7 +32,14 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
 ```
 
-Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. In reality of course, every user would be given a different, unique cookie, but this will do for now.
+:boom: WARNING :boom:
+
+Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. It will do for now as we are focusing purely on how to transmit cookies, but in reality there are two problems.
+
+1. If you have multiple users, there is no way of telling the difference between them.
+2. There is NO SECURITY in place. You can create this cookie in any browser by opening Devtools and writing it in the Application tab. The different ways to protect a cookie will be in workshop 3...
+
+:star2: WARNING OVER :star2:
 
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
