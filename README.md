@@ -58,7 +58,10 @@ req.headers.cookie; // 'logged_in=true'
 This is what you will be looking for in order to grant users access, send back private information etc.
 
 ### Removing cookies
-There are a couple of ways to delete a cookie, 1. overwriting the value. 2. Setting the age to 0.
+There are a couple of ways to delete a cookie:
+1. Overwriting the value.
+2. Setting the age to 0.
+
 ```
 // Here we are doing both.
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
