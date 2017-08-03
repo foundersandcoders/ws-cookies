@@ -21,7 +21,7 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece
 
 Cookies are attached to the server response using the `Set-Cookie` header. 
 
-In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods.
+In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods. (`setHeader` lets you set one header, `writeHead` lets you set your response code and multiple headers at the same time.)
 
 (NB: All servers use headers to communicate with the browser, not just Node.js.)
 ```
