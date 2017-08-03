@@ -1,12 +1,10 @@
 # Week 7 - Workshop 2 - Cookies
 
-## !WORK IN PROGRESS!
-
 __Learning Outcomes__
 
 - what are cookies and why are they used
-- how to check whether a request contains a cookie or not
 - how to set and remove cookies using headers
+- how to check whether a request contains a cookie or not
 - how to use the `cookie` npm package to build a cookie
 
 ---
@@ -87,6 +85,7 @@ parse(cookieHeader); // { logged_in: 'true' }
 ### Exercise
 1. Go to the [Glitch project](https://glitch.com/edit/#!/week-7-cookies) and remix it.
 2. In `index.html` there are three buttons, implement the cookie logic on the server side:
+
 Endpoint | Action
 ---|---
 `/login` | Should add a cookie and redirect to `/`
