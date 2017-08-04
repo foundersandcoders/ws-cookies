@@ -37,7 +37,7 @@ res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
 Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. It will do for now as we are focusing purely on how to transmit cookies, but in reality there are two problems.
 
 1. If you have multiple users, there is no way of telling the difference between them.
-2. There is NO SECURITY in place. You can create this cookie in any browser by opening Devtools and writing it in the Application tab. The different ways to protect a cookie will be in workshop 3...
+2. There is NO SECURITY in place. Cookies can very easily be edited in Devtools. For example, if you have a cookie of `admin=false`, it is very easy to change that to `admin=true`! The different ways to protect cookies will be in workshop 3...
 
 :star2: WARNING OVER :star2:
 
