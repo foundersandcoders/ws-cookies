@@ -19,7 +19,7 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece
 
 ### How to use cookies
 
-Cookies are attached to the server response using the `Set-Cookie` header. 
+Cookies are attached to the server response using the `Set-Cookie` header.
 
 In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods. (`setHeader` lets you set one header, `writeHead` lets you set your response code and multiple headers at the same time.)
 
@@ -89,17 +89,20 @@ const { parse } = require('cookie');
 
 const cookieHeader = req.headers.cookie;
 
-parse(cookieHeader); // { logged_in: 'true' } 
+parse(cookieHeader); // { logged_in: 'true' }
 ```
 
+### Set up
++ Clone this repo
++ Run `npm i`
+
 ### Exercise
-1. Go to the [Glitch project](https://glitch.com/edit/#!/week-7-cookies) and remix it.
-2. In `index.html` there are three buttons, implement the cookie logic on the server side:
+In `index.html` there are three buttons, implement the cookie logic on the server side:
 
 Endpoint | Action
 ---|---
 `/login` | Should add a cookie and redirect to `/`
-`/logout` | Should remove the cookie and redirect to `/` 
+`/logout` | Should remove the cookie and redirect to `/`
 `/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response.
 
 ---
