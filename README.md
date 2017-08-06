@@ -74,27 +74,10 @@ There are a couple of ways to delete a cookie:
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
 
-### Cookie npm package
-As you can see this can be a bit cumbersome, so we can use the npm package '[cookie](https://www.npmjs.com/package/cookie)' to tidy it up a bit:
-```
-const { serialize } = require('cookie');
-
-serialize('logged_in', 'true', { secure: true, httpOnly: true, maxAge: 9000 });
-// 'logged_in=true; Max-Age=9000; HttpOnly; Secure'
-```
-
-Even more usefully, `cookie` can also be used to parse incoming cookies:
-```
-const { parse } = require('cookie');
-
-const cookieHeader = req.headers.cookie;
-
-parse(cookieHeader); // { logged_in: 'true' }
-```
-
 ### Set up
 + Clone this repo
 + Run `npm i`
+
 
 ### Exercise
 In `index.html` there are three buttons, implement the cookie logic on the server side:
