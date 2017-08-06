@@ -74,9 +74,13 @@ There are a couple of ways to delete a cookie:
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
 
+### Set up
++ Clone this repo
++ Run `npm i`
+
+
 ### Exercise
-1. Go to the [Glitch project](https://glitch.com/edit/#!/week-7-cookies) and remix it.
-2. In `index.html` there are three buttons, implement the cookie logic on the server side:
+In `index.html` there are three buttons, implement the cookie logic on the server side:
 
 Endpoint | Action
 ---|---
