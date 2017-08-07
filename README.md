@@ -79,7 +79,7 @@ res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 + Clone this repo
 + `$ cd exercise`
 + `$ node server.js`
-+ Navigate to `localhost:4000`
++ Navigate to `localhost:3000`
 
 You will see that `index.html` has three buttons, now you must implement the cookie logic on the server side:
 
