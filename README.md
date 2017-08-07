@@ -73,19 +73,21 @@ There are a couple of ways to delete a cookie:
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
 
+### Exercise
+
 ### Set up
 + Clone this repo
-+ Run `npm i`
++ `$ cd exercise`
++ `$ node server.js`
++ Navigate to `localhost:4000`
 
-
-### Exercise
-In `index.html` there are three buttons, implement the cookie logic on the server side:
+You will see that `index.html` has three buttons, now you must implement the cookie logic on the server side:
 
 Endpoint | Action
 ---|---
 `/login` | Should add a cookie and redirect to `/`
 `/logout` | Should remove the cookie and redirect to `/`
-`/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response.
+`/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response, and an informative message!
 
 ---
 

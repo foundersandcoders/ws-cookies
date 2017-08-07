@@ -6,13 +6,15 @@ const router = require('./router.js');
 
 const server = http.createServer();
 
+const PORT = 3000;
+
 server
 .on(
   'listening',
   () =>
-    console.log(`Server is listening on port: 4000`)
+    console.log(`Server is listening on port: ${PORT}`)
 )
 .on('request', router);
 
 server
-.listen(4000);
+.listen(PORT);
