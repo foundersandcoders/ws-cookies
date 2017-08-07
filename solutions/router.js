@@ -6,8 +6,6 @@ const { readFile } = require('fs');
 const notFoundPage = '<p style="font-size: 10vh; text-align: center;">404!</p>';
 
 module.exports = (req, res) => {
-  const parsedUrl = parse(req.url);
-
   switch (`${req.method} ${req.url}`) {
     case 'GET /':
       return readFile(
