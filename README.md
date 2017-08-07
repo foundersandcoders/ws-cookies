@@ -5,7 +5,6 @@ __Learning Outcomes__
 - what are cookies and why are they used
 - how to set and remove cookies using headers
 - how to check whether a request contains a cookie or not
-- how to use the `cookie` npm package to build a cookie
 
 ---
 
@@ -13,7 +12,7 @@ __Learning Outcomes__
 
 So now that you know how to store a user's password safely, the question is: how does your server remember a browser?
 
-A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, that the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
+A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, which the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
 (If you open up DevTools, and go to the 'Application' tab you will be able to see all the cookies attached to the domain you are currently on.)
 
@@ -46,7 +45,7 @@ You can also add 'flags' to the cookie to header to enable certain behaviour. So
 
 Flag | Description
 ---|---
-`HttpOnly` | This prevents browser JavaScript cannot access the cookie, which stops the cookie being accessed in the event of an XSS attack.
+`HttpOnly` | This prevents browser JavaScript from accessing the cookie and stops the cookie being accessed in the event of an XSS attack. E.g. the attacker may to steal a client's cookies. With the cookies of the legitimate user at hand, the attacker can proceed to act as the user in his/her interaction with a website, impersonating the user - Identity theft!
 `Secure` | This means the cookie will only be set over a HTTPS connection. This prevents a man-in-the-middle attack.
 `Max-Age` | This sets the cookie lifetime in seconds.
 
@@ -58,7 +57,7 @@ res.setHeader('Set-Cookie', 'logged_in=true; Secure; HttpOnly; Max-Age=9000');
 ```
 
 ### Reading cookies
-Now every time that browser makes a request to your server, it will the send the cookie along with it:
+Now every time that browser makes a request to your server, it will then send the cookie along with it:
 ```
 req.headers.cookie; // 'logged_in=true'
 ```
