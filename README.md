@@ -28,7 +28,7 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 
 // OR
 
-res.writeHead(200, { 'Set-Cookie', 'logged_in=true' });
+res.writeHead(200, { 'Set-Cookie': 'logged_in=true' });
 ```
 
 :boom: WARNING :boom:
