@@ -6,6 +6,13 @@ __Learning Outcomes__
 - how to set and remove cookies using headers
 - how to check whether a request contains a cookie or not
 
+__Prerequisites__
+
+Knowledge of the following:
+- vanilla Node.js server
+- request and response object
+- how to check whether a request contains a cookie or not
+
 ---
 
 ### Remembering the browser
