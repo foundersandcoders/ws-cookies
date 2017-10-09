@@ -10,7 +10,7 @@ __Prerequisites__
 
 Knowledge of the following:
 - serving files/routes from a vanilla Node.js server
-- `request` and `response` [objects](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+- `request` and `response` [objects](https://nodejs.org/api/http.html#http_class_http_incomingmessage))
 ---
 
 ### Remembering the browser
@@ -83,7 +83,8 @@ res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ### Set up
 + Clone this repo
 + `$ cd exercise`
-+ `$ node server.js`
++ `$ npm i` or `$ npm install`
++ `$ node server.js` or (to auto-restart after changes) `$ npm run devstart`
 + Navigate to `localhost:3000`
 
 You will see that `index.html` has three buttons, now you must implement the cookie logic on the server side:
