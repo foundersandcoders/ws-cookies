@@ -10,7 +10,8 @@ __Prerequisites__
 
 Knowledge of the following:
 - vanilla Node.js server
-- request and response object
+- `request` and `response` [objects](https://nodejs.org/api/http.html#http_class_http_incomingmessage))
+
 - how to check whether a request contains a cookie or not
 
 ---
