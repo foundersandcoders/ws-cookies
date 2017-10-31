@@ -53,7 +53,7 @@ Here we are setting a very simple cookie with a key of `logged_in` and a value o
 
 
 ### Cookie flags
-You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
+You can also add 'flags' to the cookie header to enable certain behaviour. Some of the more important ones are:
 
 Flag | Description
 ---|---
