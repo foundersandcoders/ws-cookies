@@ -20,7 +20,7 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece
 
 Cookies are attached to the server response using the `Set-Cookie` header.
 
-In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods. (`setHeader` lets you set one header, `writeHead` lets you set your response code and multiple headers at the same time.)
+In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods. (`setHeader` lets you set one header at a time, `writeHead` lets you set your response code and multiple headers at the same time.)
 
 (NB: All servers use headers to communicate with the browser, not just Node.js.)
 ```
@@ -30,6 +30,7 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 
 res.writeHead(200, { 'Set-Cookie': 'logged_in=true' });
 ```
+Cookies are useful as they allow us to store information about a client. As the client keeps hold of the cookie the server can simply check the the cookies has the correct information. You **send** cookies to the frontend via the response object in the ```'Set-Cookie'``` header and **read** a clients cookie on server using ```request.headers.cookie```.
 
 :boom: WARNING :boom:
 
@@ -40,12 +41,13 @@ Here we are setting a very simple cookie with a key of `logged_in` and a value o
 
 :star2: WARNING OVER :star2:
 
+
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
 
 Flag | Description
 ---|---
-`HttpOnly` | This prevents browser JavaScript from accessing the cookie and stops the cookie being accessed in the event of an XSS attack. E.g. the attacker may to steal a client's cookies. With the cookies of the legitimate user at hand, the attacker can proceed to act as the user in his/her interaction with a website, impersonating the user - Identity theft!
+`HttpOnly` | This stops your cookie being accessed by the browser's Javascript (**including your own front-end code**). Without this flag, an attacker could intercept the user's cookies in a process known as Cross-Site Scripting (XSS). With the cookies of the legitimate user at hand, the attacker is able to act as the user in his/her interaction with a website - effectively identity theft.
 `Secure` | This means the cookie will only be set over a HTTPS connection. This prevents a man-in-the-middle attack.
 `Max-Age` | This sets the cookie lifetime in seconds.
 
@@ -53,8 +55,13 @@ More flags can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP
 
 So to improve our cookie a bit we can try:
 ```
-res.setHeader('Set-Cookie', 'logged_in=true; Secure; HttpOnly; Max-Age=9000');
+res.setHeader('Set-Cookie', 'logged_in=true; HttpOnly; Max-Age=9000');
+
+// OR
+
+res.writeHead(200, { 'Set-Cookie': 'logged_in=true; HttpOnly; Max-Age=9000'});
 ```
+*We've not included ```Secure``` as this repo is running a HTTP server. If we were running a HTTPS server this would be a great flag to include!*
 
 ### Reading cookies
 Now every time that browser makes a request to your server, it will then send the cookie along with it:
@@ -87,8 +94,8 @@ _Note: Click on the relevant button to check that you have implemented the cooki
 
 Endpoint | Action
 ---|---
-`/login` | Should add a cookie and redirect to `/`
-`/logout` | Should remove the cookie and redirect to `/`
+`/login` | Should add a cookie and **redirect** to `/`
+`/logout` | Should remove the cookie and **redirect** to `/`
 `/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response, and an informative message!
 
 ---
