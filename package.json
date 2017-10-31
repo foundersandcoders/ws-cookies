@@ -4,7 +4,7 @@
   "description": "__Learning Outcomes__",
   "start": "exercise/server.js",
   "scripts": {
-    "devstart": "nodemon exercise/server.js"
+    "watch": "nodemon exercise/server.js"
   },
   "repository": {
     "type": "git",
