@@ -76,8 +76,8 @@ res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ### Set up
 + Clone this repo
 + `$ cd exercise`
-+ `$ npm i` or `$ npm install`
-+ `$ node server.js` or (to auto-restart after changes) `$ npm run devstart`
++ `$ npm i`
++ `$ npm run watch`
 + Navigate to `localhost:3000`
 
 You will see that `index.html` has three buttons, now you must implement the cookie logic on the server side:
