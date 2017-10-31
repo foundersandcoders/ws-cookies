@@ -6,13 +6,6 @@ __Learning Outcomes__
 - how to set and remove cookies using headers
 - how to check whether a request contains a cookie or not
 
-__Prerequisites__
-
-Knowledge of the following:
-- serving files/routes from a vanilla Node.js server
-- `request` and `response` [objects](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
----
-
 ### Remembering the browser
 
 So now that you know how to store a user's password safely, the question is: how does your server remember a browser?
@@ -90,7 +83,8 @@ res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ### Set up
 + Clone this repo
 + `$ cd exercise`
-+ `$ node server.js`
++ `$ npm i`
++ `$ npm run watch`
 + Navigate to `localhost:3000`
 
 You will see that `index.html` has three buttons, now you must implement the cookie logic on the server side:
