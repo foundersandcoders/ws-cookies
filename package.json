@@ -1,0 +1,22 @@
+{
+  "name": "ws-cookies",
+  "version": "1.0.0",
+  "description": "__Learning Outcomes__",
+  "start": "exercise/server.js",
+  "scripts": {
+    "watch": "nodemon exercise/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foundersandcoders/ws-cookies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foundersandcoders/ws-cookies/issues"
+  },
+  "homepage": "https://github.com/foundersandcoders/ws-cookies#readme",
+  "dependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
