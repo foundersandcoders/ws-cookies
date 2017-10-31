@@ -2,26 +2,35 @@
 
 __Learning Outcomes__
 
-- what are cookies and why are they used
-- how to set and remove cookies using headers
-- how to check whether a request contains a cookie or not
+- What are cookies?
+- Why do we use them?
+- how do we set and remove cookies using headers?
+- how do we check whether or not a request contains a cookie?
+
+
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
 
 ### Remembering the browser
 
-So now that you know how to store a user's password safely, the question is: how does your server remember a browser?
+So now that you know how to [store a user's password safely](https://github.com/foundersandcoders/ws-password-management), the question is: just how *does* your server remember a browser?
 
-A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a piece of data that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, which the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
+A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a **piece of data** that your server, hosted on a certain domain (`localhost`, `google.com` etc) sends back to the browser, which the browser will then keep, and attach to every future request _to that domain_. An `amazon.com` cookie will not be attached to a request to an `ebay.com` domain, for example.
 
 (If you open up DevTools, and go to the 'Application' tab you will be able to see all the cookies attached to the domain you are currently on.)
 
-### How to use cookies
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
-Cookies are attached to the server response using the `Set-Cookie` header.
+### How to make cookies
+
+![baking cookies](https://media.giphy.com/media/UXcT54C7P6Hfi/giphy.gif)
+
+Cookies are attached to the server response using the **`Set-Cookie` header**.
 
 In Node.js, you set headers using the `res.setHeader` and `res.writeHead` methods. (`setHeader` lets you set one header at a time, `writeHead` lets you set your response code and multiple headers at the same time.)
 
 (NB: All servers use headers to communicate with the browser, not just Node.js.)
-```
+```javascript
 res.setHeader('Set-Cookie', 'logged_in=true');
 
 // OR
@@ -40,6 +49,9 @@ Here we are setting a very simple cookie with a key of `logged_in` and a value o
 :star2: WARNING OVER :star2:
 
 
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
+
 ### Cookie flags
 You can also add 'flags' to the cookie to header to enable certain behaviour. Some of the more important ones are:
 
@@ -52,28 +64,38 @@ Flag | Description
 More flags can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie).
 
 So to improve our cookie a bit we can try:
-```
+
+```javascript
+
 res.setHeader('Set-Cookie', 'logged_in=true; HttpOnly; Max-Age=9000');
 
 // OR
 
-res.writeHead(200, { 'Set-Cookie': 'logged_in=true; HttpOnly; Max-Age=9000'});
+res.writeHead(200, { 'Set-Cookie': 'logged_in=true; HttpOnly; Max-Age=9000' });
+// Notice the second parameter is an object, and can be used to set multiple headers.
 ```
+
 *We've not included ```Secure``` as this repo is running a HTTP server. If we were running a HTTPS server this would be a great flag to include!*
+
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
 ### Reading cookies
 Now every time that browser makes a request to your server, it will then send the cookie along with it:
-```
+```javascript
 req.headers.cookie; // 'logged_in=true'
 ```
 This is what you will be looking for in order to grant users access, send back private information etc.
 
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
 ### Removing cookies
+![Three Cookie](https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif)
+
 There are a couple of ways to delete a cookie:
 1. Overwriting the value.
 2. Setting the age to 0.
 
-```
+```javascript
 // Here we are doing both.
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
@@ -96,6 +118,9 @@ Endpoint | Action
 `/login` | Should add a cookie and **redirect** to `/`
 `/logout` | Should remove the cookie and **redirect** to `/`
 `/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response, and an informative message!
+
+
+![Two Cookie](https://media.giphy.com/media/nqEztrBh06uti/giphy.gif)
 
 ---
 
