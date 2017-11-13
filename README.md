@@ -31,7 +31,7 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a **pie
 
 ### How to make cookies
 
-![baking cookies](https://media.giphy.com/media/UXcT54C7P6Hfi/giphy.gif)
+![baking cookies](https://user-images.githubusercontent.com/22657280/32729448-b8d821a2-c87b-11e7-917e-7617d83c6722.gif)
 
 Cookies are attached to the server response using the **`Set-Cookie` header**.
 
