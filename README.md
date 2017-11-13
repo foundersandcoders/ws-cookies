@@ -1,4 +1,4 @@
-# Week 7 - Workshop 2 - Cookies
+# Founders & Coders - Cookies Workshop
 
 __Learning Outcomes__
 
