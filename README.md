@@ -7,9 +7,11 @@ __Learning Outcomes__
 - how do we set and remove cookies using headers?
 - how do we check whether or not a request contains a cookie?
 
+<br><br>
 
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
+<br><br>
 
 ### Remembering the browser
 
@@ -21,7 +23,11 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a **pie
 
 ![dev tools cookies](https://user-images.githubusercontent.com/9598261/32705742-2166ff4e-c80f-11e7-84a8-2212ce48236c.gif)
 
+<br><br>
+
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
+<br><br>
 
 ### How to make cookies
 
@@ -41,6 +47,8 @@ res.writeHead(200, { 'Set-Cookie': 'logged_in=true' });
 ```
 Cookies are useful as they allow us to store information about a client. As the client keeps hold of the cookie the server can simply check the the cookies has the correct information. You **send** cookies to the frontend via the response object in the ```'Set-Cookie'``` header and **read** a clients cookie on server using ```request.headers.cookie```.
 
+<br><br>
+
 :boom: WARNING :boom:
 
 Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. It will do for now as we are focusing purely on how to transmit cookies, but in reality there are two problems.
@@ -50,9 +58,11 @@ Here we are setting a very simple cookie with a key of `logged_in` and a value o
 
 :star2: WARNING OVER :star2:
 
+<br><br>
 
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
+<br><br>
 
 ### Cookie flags
 You can also add 'flags' to the cookie header to enable certain behaviour. Some of the more important ones are:
@@ -79,7 +89,11 @@ res.writeHead(200, { 'Set-Cookie': 'logged_in=true; HttpOnly; Max-Age=9000' });
 
 *We've not included ```Secure``` as this repo is running a HTTP server. If we were running a HTTPS server this would be a great flag to include!*
 
+<br><br>
+
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
+<br><br>
 
 ### Reading cookies
 Now every time that browser makes a request to your server, it will then send the cookie along with it:
@@ -88,7 +102,11 @@ req.headers.cookie; // 'logged_in=true'
 ```
 This is what you will be looking for in order to grant users access, send back private information etc.
 
+<br><br>
+
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
+<br><br>
 
 ### Removing cookies
 ![Three Cookie](https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif)
@@ -101,6 +119,12 @@ There are a couple of ways to delete a cookie:
 // Here we are doing both.
 res.setHeader('Set-Cookie', 'logged_in=blah; Max-Age=0');
 ```
+
+<br><br>
+
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+
+<br><br>
 
 ### Exercise
 
