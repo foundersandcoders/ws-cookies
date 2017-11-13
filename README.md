@@ -19,6 +19,8 @@ A [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a **pie
 
 (If you open up DevTools, and go to the 'Application' tab you will be able to see all the cookies attached to the domain you are currently on.)
 
+![dev tools cookies](https://user-images.githubusercontent.com/9598261/32705742-2166ff4e-c80f-11e7-84a8-2212ce48236c.gif)
+
 :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
 ### How to make cookies
