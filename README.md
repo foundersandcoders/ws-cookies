@@ -4,8 +4,8 @@ __Learning Outcomes__
 
 - What are cookies?
 - Why do we use them?
-- how do we set and remove cookies using headers?
-- how do we check whether or not a request contains a cookie?
+- How do we set and remove cookies using headers?
+- How do we check whether or not a request contains a cookie?
 
 <br><br>
 
@@ -45,7 +45,7 @@ res.setHeader('Set-Cookie', 'logged_in=true');
 
 res.writeHead(200, { 'Set-Cookie': 'logged_in=true' });
 ```
-Cookies are useful as they allow us to store information about a client. As the client keeps hold of the cookie the server can simply check the the cookies has the correct information. You **send** cookies to the frontend via the response object in the ```'Set-Cookie'``` header and **read** a clients cookie on server using ```request.headers.cookie```.
+Cookies are useful as they allow us to store information about a client. As the client keeps hold of the cookie the server can simply check the cookies has the correct information. You **send** cookies to the frontend via the response object in the ```'Set-Cookie'``` header and **read** a clients cookie on server using ```request.headers.cookie```.
 
 <br><br>
 
