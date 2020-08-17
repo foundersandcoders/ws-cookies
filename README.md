@@ -47,6 +47,12 @@ res.writeHead(200, { 'Set-Cookie': 'logged_in=true' });
 ```
 Cookies are useful as they allow us to store information about a client. As the client keeps hold of the cookie the server can simply check the cookies has the correct information. You **send** cookies to the frontend via the response object in the ```'Set-Cookie'``` header and **read** a clients cookie on server using ```request.headers.cookie```.
 
+**Note**: You can set multiple values for a header by passing an array. For example:
+
+```javascript
+res.setHeader('Set-Cookie', ['logged_in=true', 'another_value=42']);
+```
+
 <br><br>
 
 :boom: WARNING :boom:
