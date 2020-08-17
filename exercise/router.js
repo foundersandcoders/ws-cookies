@@ -21,6 +21,7 @@ module.exports = (req, res) => {
           return res.end(data);
         }
       );
+    // Insert new cases to handle different routes here
     default:
       res.writeHead(
         404,
