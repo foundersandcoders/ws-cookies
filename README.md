@@ -141,9 +141,9 @@ _Note: Click on the relevant button to check that you have implemented the cooki
 
 Endpoint | Action
 ---|---
-`/login` | Should add a cookie and **redirect** to `/`
-`/logout` | Should remove the cookie and **redirect** to `/`
-`/auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response, and an informative message!
+`POST /login` | Should add a cookie and **redirect** to `/`
+`POST /logout` | Should remove the cookie and **redirect** to `/`
+`GET /auth_check` | Based on the validity of the cookie, should send back a 200 or 401 response, and an informative message!
 
 
 ![Two Cookie](https://media.giphy.com/media/nqEztrBh06uti/giphy.gif)
